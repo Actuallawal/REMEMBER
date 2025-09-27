@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember Everything: A 15-Page Playbook for Your Brain</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* 60-30-10 Color Rule Implementation */
+            --primary: #f8f9fa; /* 60% - Light neutral background */
+            --secondary: #2a9d8f; /* 30% - Teal as main accent */
+            --accent: #e76f51; /* 10% - Orange for highlights */
+            --purple: #9d4edd; /* Used sparingly for titles */
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--primary);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 80px 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Buttons with consistent styling */
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(42, 157, 143, 0.3);
+        }
+        
+        .btn:hover {
+            background: #1d7a6e;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(42, 157, 143, 0.4);
+        }
+        
+        .btn-accent {
+            background: var(--accent);
+            box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3);
+        }
+        
+        .btn-accent:hover {
+            background: #d45a3f;
+            box-shadow: 0 6px 20px rgba(231, 111, 81, 0.4);
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: var(--primary);
+            padding: 100px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .hero-text {
+            flex: 1;
+        }
+        
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .book-cover {
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            transform: rotate(-2deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .book-cover:hover {
+            transform: rotate(0deg);
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--purple);
+        }
+        
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: var(--gray);
+        }
+        
+        /* Countdown Timer */
+        .countdown-container {
+            background: var(--accent);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(231, 111, 81, 0.3);
+        }
+        
+        .countdown-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .countdown-box {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            min-width: 60px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .countdown-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        /* About Section */
+        #about {
+            background-color: white;
+        }
+        
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .benefit-item {
+            background: rgba(42, 157, 143, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(42, 157, 143, 0.1);
+        }
+        
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(42, 157, 143, 0.1);
+        }
+        
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .benefit-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        /* Checkout Section */
+        #checkout {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--purple) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .checkout-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 20px 0;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .trust-icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .trust-icons i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .trust-text {
+            font-size: 1.1rem;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        /* Author Section */
+        #author {
+            background-color: white;
+        }
+        
+        .author-content {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .author-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--secondary);
+            flex-shrink: 0;
+            border: 3px solid var(--secondary);
+        }
+        
+        .author-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .author-text p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Playful Elements */
+        .playful-element {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.05;
+        }
+        
+        .circle-1 {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: var(--accent);
+            top: 10%;
+            right: 5%;
+        }
+        
+        .circle-2 {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--secondary);
+            bottom: 15%;
+            left: 5%;
+        }
+        
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 170px solid var(--purple);
+            opacity: 0.03;
+            top: 20%;
+            left: 10%;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .author-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .countdown {
+                gap: 5px;
+            }
+            
+            .countdown-box {
+                min-width: 50px;
+                padding: 8px;
+            }
+            
+            .countdown-value {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .price {
+                font-size: 2.2rem;
+            }
+            
+            .btn {
+                padding: 12px 28px;
+                font-size: 1rem;
+            }
+            
+            .countdown-box {
+                min-width: 45px;
+                padding: 6px;
+            }
+            
+            .countdown-value {
+                font-size: 1.3rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Playful background elements -->
+    <div class="playful-element circle-1"></div>
+    <div class="playful-element circle-2"></div>
+    <div class="playful-element triangle"></div>
+    
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Remember Everything: A 15-Page Playbook for Your Brain</h1>
+                    <h2>A Fun and Practical Guide</h2>
+                    <p>Unlock your memory power in just 15 pages.</p>
+                    
+                    <!-- Countdown Timer -->
+                    <div class="countdown-container">
+                        <div class="countdown-title">Limited Time Offer - Ends In:</div>
+                        <div class="countdown">
+                            <div class="countdown-box">
+                                <div class="countdown-value" id="days">07</div>
+                                <div class="countdown-label">Days</div>
+                            </div>
+                            <div class="countdown-box">
+                                <div class="countdown-value" id="hours">00</div>
+                                <div class="countdown-label">Hours</div>
+                            </div>
+                            <div class="countdown-box">
+                                <div class="countdown-value" id="minutes">00</div>
+                                <div class="countdown-label">Mins</div>
+                            </div>
+                            <div class="countdown-box">
+                                <div class="countdown-value" id="seconds">00</div>
+                                <div class="countdown-label">Secs</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#checkout" class="btn btn-accent">Buy Now</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.ibb.co/PG6pqRqW/Chat-GPT-Image-Sep-27-2025-09-05-53-PM.png" alt="Book Cover" class="book-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <p>This isn't another boring textbook. It's a colorful, practical playbook packed with fun tricks, exercises, and illustrations to boost your memory — in just 15 pages. ✅ A built-in Memory Tracker at the back so you can record your progress.</p>
+                
+                <div class="benefits">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Easy-to-use tools</h3>
+                        <p>Simple techniques you can apply immediately</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Fun exercises</h3>
+                        <p>Engaging activities that make learning enjoyable</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Smart illustrations</h3>
+                        <p>Visual aids that enhance memory retention</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Daily habits that stick</h3>
+                        <p>Practical routines for long-term memory improvement</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="checkout">
+        <div class="container">
+            <div class="checkout-content">
+                <h2>Get Your Copy Today</h2>
+                <div class="price">₦4,999</div>
+                <p>Instant digital download after payment</p>
+                
+                <button id="paystack-button" class="btn">GRAB YOUR COPY</button>
+                
+                <div class="trust-icons">
+                    <i class="fas fa-lock"></i>
+                    <div>
+                        <p class="trust-text">Secure Payment with Paystack</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Author Section -->
+    <section id="author">
+        <div class="container">
+            <div class="author-content">
+                <div class="author-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="author-text">
+                    <h3>About the Author</h3>
+                    <p>I'm Seidu Lawal, creator of this playbook. I made it short, fun, and powerful so you can start training your memory today. Now go flex that memory muscle!</p>
+                    <a href="#checkout" class="btn">Get Your Copy Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Remember Everything Playbook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Paystack integration
+        document.getElementById('paystack-button').addEventListener('click', function() {
+            var handler = PaystackPop.setup({
+                key: 'pk_live_bab837f46c02f8acfd170f322780645bd132f5fe',
+                email: 'customer@example.com',
+                amount: 499999,
+                currency: 'NGN',
+                ref: 'remember_everything_' + Math.floor((Math.random() * 1000000000) + 1),
+                callback: function(response) {
+                    alert('Payment successful! Your digital book will be emailed to you shortly.');
+                },
+                onClose: function() {
+                    alert('Payment was not completed. Please try again.');
+                }
+            });
+            handler.openIframe();
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Countdown Timer
+        function startCountdown() {
+            const now = new Date();
+            const countdownDate = new Date(now.getTime() + (7 * 24 * 60 * 60 * 1000));
+            
+            const countdownTimer = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                if (distance < 0) {
+                    clearInterval(countdownTimer);
+                    document.querySelector('.countdown-container').innerHTML = 
+                        '<div class="countdown-title">Offer Expired!</div>' +
+                        '<p style="margin-top:10px;">Please contact us for availability</p>';
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+            }, 1000);
+        }
+        
+        window.onload = function() {
+            startCountdown();
+        };
+    </script>
+</body>
+</html>
